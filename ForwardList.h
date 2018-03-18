@@ -1,5 +1,6 @@
 #pragma once
 #include <memory>
+
 template <typename T>
 class ForwardList
 {
@@ -11,9 +12,10 @@ private:
 	List *First, *Last;
 
 public:
-	ForwardList(const T input);
-	void Add(T &input);
+	ForwardList(const T &input);
+ void Add(const T &input);
 	void Show();
 };
+
 
 

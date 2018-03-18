@@ -2,8 +2,8 @@
 #include <memory>
 using namespace std;
 
-template<typename T>
-ForwardList<T>::ForwardList(const T input)
+ template<typename T>
+ForwardList<T>::ForwardList(const T &input)
 {
 	 List* temp = new List();
 
@@ -15,7 +15,7 @@ ForwardList<T>::ForwardList(const T input)
 }
 
  template <typename T>
- void   ForwardList<T>::Add(T &input) {
+ void ForwardList<T>::Add(const T &input) {
 	 List* temp = new List();
 	 Last->next = temp;
 	 Last = temp;
@@ -26,12 +26,12 @@ ForwardList<T>::ForwardList(const T input)
  
  template <typename T>
  void   ForwardList<T>::Show() {
-	/* T *current=First
+	 List *current = First;
 
 	 do {
-	 
-		 cout << current->field;
 
-	 } while (current->next != nullptr);*/
+		 cout << current->field << endl;
+		 current = current->next;
+	 } while (current != nullptr);
  
  }
