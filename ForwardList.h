@@ -6,10 +6,13 @@ class ForwardList
 {
 private:
 	struct List {
-		List *next;
+		std::shared_ptr<List> next=nullptr;
+	
 		T field;
 	};
-	List *First, *Last;
+	std::shared_ptr<List> First;
+	std::shared_ptr<List> Last;
+
 
 public:
 	ForwardList(const T &input);

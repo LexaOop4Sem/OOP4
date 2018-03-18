@@ -5,8 +5,7 @@ using namespace std;
  template<typename T>
 ForwardList<T>::ForwardList(const T &input)
 {
-	 List* temp = new List();
-
+	shared_ptr<List> temp(new List());
 	 temp->next = nullptr;
 	 temp->field = input;
 
@@ -16,7 +15,8 @@ ForwardList<T>::ForwardList(const T &input)
 
  template <typename T>
  void ForwardList<T>::Add(const T &input) {
-	 List* temp = new List();
+	
+	 std::shared_ptr<List> temp(new List());
 	 Last->next = temp;
 	 Last = temp;
 
@@ -26,7 +26,8 @@ ForwardList<T>::ForwardList(const T &input)
  
  template <typename T>
  void   ForwardList<T>::Show() {
-	 List *current = First;
+	 std::shared_ptr<List> current;
+	 current = First;
 
 	 do {
 
@@ -35,3 +36,10 @@ ForwardList<T>::ForwardList(const T &input)
 	 } while (current != nullptr);
  
  }
+
+
+ //template <typename T>
+ //void   ForwardList<T>::Del(const T &input) {
+	//
+
+ //}
