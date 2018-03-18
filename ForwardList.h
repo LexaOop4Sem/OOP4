@@ -1,24 +1,31 @@
 #pragma once
 #include <memory>
+using namespace std;
 
 template <typename T>
 class ForwardList
 {
 private:
 	struct List {
-		std::shared_ptr<List> next=nullptr;
-	
+		shared_ptr<List> next = nullptr;
+
 		T field;
 	};
-	std::shared_ptr<List> First;
-	std::shared_ptr<List> Last;
+	shared_ptr<List> First;
+	shared_ptr<List> Last;
 
 
 public:
 	ForwardList(const T &input);
- void Add(const T &input);
+	void Add(const T &input);
 	void Show();
+	void Del(const T &input);
+	List Search(const T &input);
 };
 
 
-
+//template<typename T>
+//List * ForwardList<T>::Search(const T & input)
+//{
+//	return nullptr;
+//}
