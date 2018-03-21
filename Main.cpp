@@ -11,12 +11,17 @@ int main() {
 		line.Add(i);
 	}
 
-	line.Show();
+	//line.Show();
 	cout << "-----line2----" << endl;
 	//line.Search(10);
 	line.Del(5);
-	cout << "--------------------" << endl;;
-	line.Show();
+	cout << "--------------------" << endl;
+	//line.Show();
+	cout << "--------------------" << endl;
+
+	line[11];
+
+
 
 	system("pause");
 	return 0;

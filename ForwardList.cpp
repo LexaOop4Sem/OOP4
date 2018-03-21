@@ -93,3 +93,27 @@ shared_ptr<typename ForwardList<T>::List> ForwardList<T>::Search(const T & input
 	return current;
 	
 }
+
+
+template<typename T>
+void ForwardList<T>::operator[](const int &n) {
+	int count=0;
+	shared_ptr<List> current;
+	current = First;
+	while (current != Last) {
+		current = current->next;
+		count++;
+	}
+	current = First;
+	if ((n <= -1) || (n > count-1)) {
+		cout << "out of range" << endl;
+		return;
+	}
+	else {
+		for (int i = 0; i < n; i++) {
+			current = current->next;
+		}
+	}
+	cout << current->field;
+	return;
+}

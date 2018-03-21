@@ -20,7 +20,8 @@ public:
 	void Add(const T &input);
 	void Show();
 	void Del(const T &input);
-	shared_ptr<typename ForwardList<T>::List> ForwardList<T>::Search(const T & input);
+	shared_ptr< typename ForwardList<T>::List> ForwardList<T>::Search(const T & input);
+	void operator[](const int &n);
 };
 
 
