@@ -23,14 +23,13 @@ ForwardList<T>::ForwardList(const T &input)
 	 temp->field = input;
  }
 
+
  
  template <typename T>
  void   ForwardList<T>::Show() {
 	 std::shared_ptr<List> current;
 	 current = First;
-
 	 do {
-
 		 cout << current->field << endl;
 		 current = current->next;
 	 } while (current != nullptr);
@@ -45,11 +44,29 @@ ForwardList<T>::ForwardList(const T &input)
 		 return;
 	 }
 	 else {
-	 
+		 if (prev==First) {//if del first item
+			 if (First->next!=nullptr) {
+				 First = First->next;
+				 return;
+			 }
+			 else {
+				 First = nullptr;
+				 cout << "List is Empty" << endl;
+				 return;
+			 }
+		 }
+		 else if (prev->next == Last) {
+			 prev->next = nullptr;
+			 Last = prev;
+			 cout <<"deleted"<< endl;
+		 }
+		 else {
+			 prev->next = prev->next->next;
+			 cout << "deleted" << endl;
+		 }
+
+
 	 }
-
-	
-
  }
 
 
