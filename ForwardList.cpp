@@ -40,7 +40,6 @@ ForwardList<T>::ForwardList(const T &input)
 
  template <typename T>
  void ForwardList<T>::Del(const T &input) {
-	 bool f = 0;
 	 shared_ptr<List> prev = Search(input);
 	 if (prev == Last) {
 		 return;
@@ -55,17 +54,17 @@ ForwardList<T>::ForwardList(const T &input)
 
 
 template<typename T>
-typename ForwardList<T>::List ForwardList<T>::Search(const T & input){ 
+shared_ptr<typename ForwardList<T>::List> ForwardList<T>::Search(const T & input) {
 	shared_ptr<List> current;
 	current = First;
 	if (First->field == input) {
-		 return *First; 
+		 return First; 
 	}
 	else {
 		do {
 			if (current->next->field == input) {
 				cout << "detected" << endl;
-				return *current;
+				return current;
 			}
 			current = current->next;
 		} while (current->next != nullptr);
@@ -74,6 +73,6 @@ typename ForwardList<T>::List ForwardList<T>::Search(const T & input){
 
 		cout << "not found" << endl;
 	
-	return *current;
+	return current;
 	
 }
