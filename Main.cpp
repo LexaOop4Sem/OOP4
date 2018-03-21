@@ -12,7 +12,10 @@ int main() {
 
 	line.Show();
 	cout << "-----line2----" << endl;
-	line.Search(9);
+	//line.Search(10);
+	line.Del(9);
+
+	
 
 	system("pause");
 	return 0;
